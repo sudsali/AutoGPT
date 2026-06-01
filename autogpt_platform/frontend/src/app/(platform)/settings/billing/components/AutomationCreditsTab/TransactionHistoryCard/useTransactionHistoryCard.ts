@@ -10,6 +10,7 @@ export interface TransactionRow {
   date: string;
   description: string;
   amount: string;
+  balance: string;
   kind: "credit" | "debit";
 }
 
@@ -41,6 +42,7 @@ export function useTransactionHistoryCard() {
           : "—",
         description: tx.description ?? tx.transaction_type ?? "Transaction",
         amount: `${amountCents > 0 ? "+" : ""}${formatCents(amountCents)}`,
+        balance: formatCents(tx.running_balance ?? 0),
         kind: amountCents >= 0 ? "credit" : "debit",
       };
     },
