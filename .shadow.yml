@@ -1,0 +1,12 @@
+codebase:
+  src_dir: autogpt_platform
+  file_ext: ""
+  test_dir: ""
+  language: ""
+bot:
+  name: shadow
+  escalate_label: needs-human
+models:
+  investigator: us.anthropic.claude-opus-4-7
+  critic: us.anthropic.claude-opus-4-7
+  reporter: us.anthropic.claude-haiku-4-5-20251001-v1:0
