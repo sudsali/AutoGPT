@@ -1,0 +1,23 @@
+name: Shadow
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        required: true
+
+permissions:
+  contents: read
+  id-token: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  shadow:
+    uses: sudsali/shadow/.github/workflows/shadow-review.yml@4c38409c64ffd05c9f389f0c7d659ad5630da9d7  # v0
+    with:
+      pr_number: ${{ inputs.pr_number }}
+    secrets:
+      AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
