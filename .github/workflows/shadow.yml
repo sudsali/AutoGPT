@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   shadow:
-    uses: sudsali/shadow/.github/workflows/shadow-review.yml@4c38409c64ffd05c9f389f0c7d659ad5630da9d7  # v0
+    uses: sudsali/shadow/.github/workflows/shadow-review.yml@fb2948860eb9dd13feb6912983a9346b95411ce0  # v0
     with:
       pr_number: ${{ inputs.pr_number }}
     secrets:
