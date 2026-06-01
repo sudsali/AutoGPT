@@ -309,6 +309,10 @@ export default function CreditsPage() {
 
           {/* Transaction History */}
           <h3 className="text-lg font-medium">Transaction History</h3>
+          <p className="text-neutral-600">
+            Running balance might not be ordered accurately when concurrent
+            executions are happening.
+          </p>
           {transactionHistory.transactions.length === 0 && (
             <p className="text-neutral-600">No transactions found.</p>
           )}
@@ -322,6 +326,7 @@ export default function CreditsPage() {
                 <TableHead>Date</TableHead>
                 <TableHead>Description</TableHead>
                 <TableHead>Amount</TableHead>
+                <TableHead>Balance</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -347,6 +352,9 @@ export default function CreditsPage() {
                     }
                   >
                     <b>{formatCredits(transaction.amount)}</b>
+                  </TableCell>
+                  <TableCell>
+                    {formatCredits(transaction.running_balance)}
                   </TableCell>
                 </TableRow>
               ))}
